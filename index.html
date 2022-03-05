@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Piedra Papel Tijeras</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />-->
+</head>
+
+<body>
+
+    <!-- POPUP MESSAGE -->
+
+    <!--
+    <section id="box__shadow" class="animate__animated">
+        <div class="box__message">
+            <p>Ya has jugado la partida, por favor reinicia el juego</p>
+            <button type="button" class="btn btn__paper" onclick="hide__message()">
+                <span>Aceptar</span>
+            </button>
+
+        </div>
+    </section>
+
+    -->
+
+    <header>
+        <section class="title__game">
+            <div>
+                <h1>Piedra-Papel-Tijeras</h1>
+            </div>
+        </section>
+
+        <!-- SCORE BOARD SECTION - VERTICAL -->
+
+        <section class="score__board">
+            <div class="scoreboard__content">
+                <p class="score__title">Victorias:</p>
+                <div class="board victories">
+                    <p id="score__victories" class="board-txt">0</p>
+                    <p id="score-point" class="score-overlay"></p>
+                </div>
+            </div>
+            <div class="scoreboard__content">
+                <p class="score__title">Empates:</p>
+                <div class="board draws">
+                    <p id="score__draws" class="board-txt">0</p>
+                    <p id="score-point" class="score-overlay"></p>
+                </div>
+            </div>
+            <div class="scoreboard__content">
+                <p class="score__title">Derrotas:</p>
+                <div class="board defeats">
+                    <p id="score__defeats" class="board-txt">0</p>
+                    <p id="score-point" class="score-overlay"></p>
+                </div>
+            </div>
+        </section>
+        <!--
+  <section class="github__zone">
+    <div>
+      <a href="https://github.com/" target="_blank">        
+      </a>  
+    </div>    
+  </section>
+-->
+
+        <!-- SCORE BOARD SECTION - HORIZONTAL -->
+
+        <section class="score__board">
+            <div class="scoreboard__content">
+                <span id="score__victoriesMP" class="whiteColor icon-happy"></span>
+                <span id="score__drawsMP" class="whiteColor icon-neutral"></span>
+                <span id="score__defeatsMP" class="whiteColor icon-crying"></span>
+            </div>
+        </section>
+
+    </header>
+
+
+
+    <!-- GAME SECTION | PLAYER SECTION -->
+
+    <main class="game__board">
+        <section class="player__zone">
+
+            <button type="button" id="rock" class="btn btn__rock" onclick="choose(this, event)">
+                <span class="icon-basecamp"></span>
+            </button>
+
+            <button type="button" id="paper" class="btn btn__paper" onclick="choose(this, event)">
+                <span class="icon-file-empty"></span>
+            </button>
+
+            <button type="button" id="scissors" class="btn btn__scissors" onclick="choose(this, event)">
+                <span class="icon-scissors"></span>
+            </button>
+
+        </section>
+
+        <!-- GAME SECTION | BUTTONS -->
+
+        <section class="button__zone">
+            <button type="button" id="play" class="btn btn__play" onclick="play__game()">
+                <span class="icon-play3"></span>
+            </button>
+
+            <button type="button" id="reboot" class="btn btn__reboot" onclick="reboot()">
+                <span class="icon-spinner11"></span>
+            </button>
+        </section>
+
+        <!-- GAME SECTION | COM SECTION -->
+
+        <section id="computer_movile" class="computer__zone">
+
+
+            <button type="button" id="rock__com" class="btn btn__rock btn__com hide">
+                <span class="icon-basecamp"></span>
+            </button>
+            <button type="button" id="paper__com" class="btn btn__paper btn__com hide">
+                <span class="icon-file-empty"></span>
+            </button>
+            <button type="button" id="scissors__com" class="btn btn__scissors btn__com hide">
+                <span class="icon-scissors"></span>
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- SweetAlert error message handling script -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <!-- The execution order and linking of scripts are important -->
+    <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+</html>
