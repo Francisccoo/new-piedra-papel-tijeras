@@ -78,7 +78,7 @@ function play__game() {
     switch (random__number) {
       case 0:
         computer[0];
-        rock__com.classList.remove("hide");
+        rock__com.classList.toggle("flip-horizontal-bottom");
         break;
       case 1:
         computer[1];
@@ -155,13 +155,6 @@ function reboot(activeElements) {
 
 function show__message() {
 
-  /*
-  box__shadow.style.display = "block";
-  box__shadow.classList.add("animate__fadeInDown");
-  box__shadow.classList.remove("animate__fadeOutUp");
-  */
-
-
   swal({
     title: "Alto!",
     text: "Ya has jugado una partida, por favor reinicia el juego",
@@ -170,12 +163,3 @@ function show__message() {
   });
 
 }
-
-/*
-function hide__message() {
-
-  box__shadow.classList.remove("animate__fadeInDown");
-  box__shadow.classList.add("animate__fadeOutUp");
-
-}
-*/
