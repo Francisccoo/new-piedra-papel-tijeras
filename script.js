@@ -119,6 +119,7 @@ function play__game() {
     }
 
     defeats++;
+    show__dftMessage();
     setTimeout(() => {
         text__defeats.innerHTML = defeats,
         text__defeatsMP.innerHTML = defeats;
@@ -190,6 +191,15 @@ function show__drwMessage() {
     title: "Empate",
     text: "Habéis empatado, pulsa el botón para cerrar",
     icon: "warning",
+    button: "Aceptar",
+  });
+}
+
+function show__dftMessage() {
+  swal({
+    title: "Derrota...",
+    text: "Has perdido, pulsa el botón para cerrar",
+    icon: "error",
     button: "Aceptar",
   });
 }
