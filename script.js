@@ -98,6 +98,7 @@ function play__game() {
 
     if (user === computer[random__number]) { 
       draws++;
+      show__drwMessage();
      setTimeout(() => {
         text__draws.innerHTML = draws,
         text__drawsMP.innerHTML = draws;
@@ -108,6 +109,7 @@ function play__game() {
 
     if (winner(user, computer[random__number])) {
       victories++;
+      show__vMessage();
       setTimeout(() => {
         text__victories.innerHTML = victories,
         text__victoriesMP.innerHTML = victories;
@@ -123,7 +125,6 @@ function play__game() {
        }, 1000);
     played = true;
   } else { // Si ya hemos jugado
-    //alert("Ya has jugado la partida, por favor reinicia el juego");
     show__message();
   }
 }
@@ -175,19 +176,39 @@ function show__message() {
 
 }
 
+function show__vMessage() {
+  swal({
+    title: "¡Victoria!",
+    text: "¡Has ganado!, pulsa el botón para cerrar",
+    icon: "success",
+    button: "Aceptar",
+  });
+}
+
+function show__drwMessage() {
+  swal({
+    title: "Empate",
+    text: "Habéis empatado, pulsa el botón para cerrar",
+    icon: "warning",
+    button: "Aceptar",
+  });
+}
+
+// 6ª Función - Mostrar las figuras según las reglas - HAY QUE REVISAR!!!
+
 function showFigures() {
   for(let i = 0 ; i < icons.length ; i++ ) {
 
     if(computer[0]) {
-      icons[1].classList.toggle("dispNone");
+      icons[0].classList.toggle("dispNone");
       break;
     }
     else if (computer[1]) {
-        icons[2].classList.toggle("dispNone");
+        icons[1].classList.toggle("dispNone");
          break;
     }
     else {
-      icons[3].classList.toggle("dispNone");
+      icons[2].classList.toggle("dispNone");
        break;
     }
     
