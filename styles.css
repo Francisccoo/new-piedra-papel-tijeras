@@ -146,6 +146,10 @@ header {
   justify-content: space-between;
 }
 
+h1 {
+  color: var(--white);
+}
+
 body {
   font-family: sans-serif;
   display: flex;
@@ -153,9 +157,9 @@ body {
   align-items: center;
 }
 
-/* .hide {
+.hide {
   visibility: hidden;
-} */
+}
 
 .dispNone {
   display: none;
@@ -171,7 +175,7 @@ span {
   display: flex;
   margin: auto;
   border-radius: 20px;
-  background-color: var(--blue);
+  /* background-color: var(--blue); */
 }
 
 .scoreboard__content {
@@ -242,7 +246,7 @@ span {
   background-color: var(--purple);
   border: none;
   outline: 0;
-  box-shadow: inset 0 -5px rgb(0 0 0 / 20%);
+  /* box-shadow: inset 0 -5px rgb(0 0 0 / 20%); */
   cursor: pointer;
   transition: 0.2s;
   will-change: transform;

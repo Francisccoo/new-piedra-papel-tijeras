@@ -5,9 +5,8 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
-const rock__com = document.getElementById("rock__com");
-const paper__com = document.getElementById("paper__com");
-const scissors__com = document.getElementById("scissors__com");
+const com = document.getElementById("com");
+const icons = document.getElementById("com").getElementsByTagName("span");
 
 const play = document.getElementById("play");
 
@@ -30,6 +29,8 @@ const text__defeats = document.getElementById("score__defeats");
 const text__victoriesMP = document.getElementById("score__victoriesMP");
 const text__drawsMP = document.getElementById("score__drawsMP");
 const text__defeatsMP = document.getElementById("score__defeatsMP");
+
+const computer = ["r", "p", "s"];
 
 
 // 1ª función - controlar la elección y lógica de los botones
@@ -73,50 +74,58 @@ function play__game() {
   if (!played) { // Si todavia no hemos jugado ...
     let random__number = Math.round(Math.random() * (2 - 0) + 0);
 
-    const computer = ["r", "p", "s"];
+    //const computer = ["r", "p", "s"];
 
     switch (random__number) {
       case 0:
         computer[0];
-        rock__com.classList.toggle("flip-horizontal-bottom");
+        com.classList.toggle("flip-horizontal-bottom");
+        setTimeout(() => { showFigures()}, 1000);
         break;
       case 1:
         computer[1];
-        paper__com.classList.remove("hide");
+        com.classList.toggle("flip-horizontal-bottom");
+        setTimeout(() => { showFigures()}, 1000);
         break;
       case 2:
         computer[2];
-        scissors__com.classList.remove("hide");
+        com.classList.toggle("flip-horizontal-bottom");
+        setTimeout(() => { showFigures()}, 1000);
         break;
       default:
         alert("Por favor, reinicia el juego");
     }
 
-    if (user === computer[random__number]) {
+    if (user === computer[random__number]) { 
       draws++;
-      text__draws.innerHTML = draws;
-      text__drawsMP.innerHTML = draws;
+     setTimeout(() => {
+        text__draws.innerHTML = draws,
+        text__drawsMP.innerHTML = draws;
+       }, 1000);
       played = true;
       return; //No continua comprovando
     }
 
     if (winner(user, computer[random__number])) {
       victories++;
-      text__victories.innerHTML = victories;
-      text__victoriesMP.innerHTML = victories;
+      setTimeout(() => {
+        text__victories.innerHTML = victories,
+        text__victoriesMP.innerHTML = victories;
+       }, 1000);
       played = true;
       return; //No continua comprovando
     }
 
     defeats++;
-    text__defeats.innerHTML = defeats;
-    text__defeatsMP.innerHTML = defeats;
+    setTimeout(() => {
+        text__defeats.innerHTML = defeats,
+        text__defeatsMP.innerHTML = defeats;
+       }, 1000);
     played = true;
   } else { // Si ya hemos jugado
     //alert("Ya has jugado la partida, por favor reinicia el juego");
     show__message();
   }
-
 }
 
 // 3ª Función - comprovar si hemos ganado, perdido o empatado
@@ -137,9 +146,11 @@ function winner(player, opponent) {
 
 function reboot(activeElements) {
 
-  rock__com.classList.add("hide");
-  paper__com.classList.add("hide");
-  scissors__com.classList.add("hide");
+com.classList.toggle("flip-horizontal-bottom");
+
+ for(let i = 0 ; i < icons.length ; i++ ) {
+    icons[i].classList.add("dispNone");
+  } 
 
   played = false;
   play.disabled = true;
@@ -162,4 +173,23 @@ function show__message() {
     button: "Aceptar",
   });
 
+}
+
+function showFigures() {
+  for(let i = 0 ; i < icons.length ; i++ ) {
+
+    if(computer[0]) {
+      icons[1].classList.toggle("dispNone");
+      break;
+    }
+    else if (computer[1]) {
+        icons[2].classList.toggle("dispNone");
+         break;
+    }
+    else {
+      icons[3].classList.toggle("dispNone");
+       break;
+    }
+    
+  } 
 }
