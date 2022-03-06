@@ -17,8 +17,7 @@ play.style.opacity = "0.5";
 
 let victories = 0,
   draws = 0,
-  defeats = 0
-
+  defeats = 0;
 
 // Puntuación para orientación vertical
 const text__victories = document.getElementById("score__victories");
@@ -32,7 +31,6 @@ const text__defeatsMP = document.getElementById("score__defeatsMP");
 
 const computer = ["r", "p", "s"];
 
-
 // 1ª función - controlar la elección y lógica de los botones
 
 function choose(btnEle, evt) {
@@ -44,7 +42,6 @@ function choose(btnEle, evt) {
 
     paper.classList.remove("btn__active");
     scissors.classList.remove("btn__active");
-
   } else if (btnEle === paper) {
     user = "p";
 
@@ -52,8 +49,6 @@ function choose(btnEle, evt) {
 
     rock.classList.remove("btn__active");
     scissors.classList.remove("btn__active");
-
-
   } else if (btnEle === scissors) {
     user = "s";
 
@@ -65,13 +60,13 @@ function choose(btnEle, evt) {
 
   play.disabled = false;
   play.style.opacity = "1";
-
 }
 
 // 2ª Función - Control de flujo del juego (CPU aleatoria, marcador de VDE (victorias, derrotas, empates, etc.))
 
 function play__game() {
-  if (!played) { // Si todavia no hemos jugado ...
+  if (!played) {
+    // Si todavia no hemos jugado ...
     let random__number = Math.round(Math.random() * (2 - 0) + 0);
 
     //const computer = ["r", "p", "s"];
@@ -80,29 +75,35 @@ function play__game() {
       case 0:
         computer[0];
         com.classList.toggle("flip-horizontal-bottom");
-        setTimeout(() => { showFigures()}, 1000);
+        setTimeout(() => {
+          showFigures();
+        }, 1000);
         break;
       case 1:
         computer[1];
         com.classList.toggle("flip-horizontal-bottom");
-        setTimeout(() => { showFigures()}, 1000);
+        setTimeout(() => {
+          showFigures();
+        }, 1000);
         break;
       case 2:
         computer[2];
         com.classList.toggle("flip-horizontal-bottom");
-        setTimeout(() => { showFigures()}, 1000);
+        setTimeout(() => {
+          showFigures();
+        }, 1000);
         break;
       default:
         alert("Por favor, reinicia el juego");
     }
 
-    if (user === computer[random__number]) { 
+    if (user === computer[random__number]) {
       draws++;
-     setTimeout(() => {
-        text__draws.innerHTML = draws,
-        text__drawsMP.innerHTML = String.fromCodePoint(0x1F611) + draws;
-       }, 1000);
-       show__drwMessage();
+      setTimeout(() => {
+        (text__draws.innerHTML = draws),
+          (text__drawsMP.innerHTML = String.fromCodePoint(0x1f611) + draws);
+      }, 1000);
+      show__drwMessage();
       played = true;
       return; //No continua comprovando
     }
@@ -110,22 +111,24 @@ function play__game() {
     if (winner(user, computer[random__number])) {
       victories++;
       setTimeout(() => {
-        text__victories.innerHTML = victories,
-        text__victoriesMP.innerHTML = String.fromCodePoint(0x1F604) + victories;
-       }, 1000);
-       show__vMessage();
+        (text__victories.innerHTML = victories),
+          (text__victoriesMP.innerHTML =
+            String.fromCodePoint(0x1f604) + victories);
+      }, 1000);
+      show__vMessage();
       played = true;
       return; //No continua comprovando
     }
 
     defeats++;
     setTimeout(() => {
-        text__defeats.innerHTML = defeats,
-        text__defeatsMP.innerHTML = String.fromCodePoint(0x1F641) + defeats;
-       }, 1000);
-       show__dftMessage();
+      (text__defeats.innerHTML = defeats),
+        (text__defeatsMP.innerHTML = String.fromCodePoint(0x1f641) + defeats);
+    }, 1000);
+    show__dftMessage();
     played = true;
-  } else { // Si ya hemos jugado
+  } else {
+    // Si ya hemos jugado
     show__message();
   }
 }
@@ -147,12 +150,11 @@ function winner(player, opponent) {
 // 4ª Función - Reiniciar el juego
 
 function reboot(activeElements) {
+  com.classList.toggle("flip-horizontal-bottom");
 
-com.classList.toggle("flip-horizontal-bottom");
-
- for(let i = 0 ; i < icons.length ; i++ ) {
+  for (let i = 0; i < icons.length; i++) {
     icons[i].classList.add("dispNone");
-  } 
+  }
 
   played = false;
   play.disabled = true;
@@ -161,27 +163,25 @@ com.classList.toggle("flip-horizontal-bottom");
   rock.classList.remove("btn__active");
   paper.classList.remove("btn__active");
   scissors.classList.remove("btn__active");
-
 }
 
 // 5ª Función - Mostrar mensaje para reiniciar el juego
 
 function show__message() {
-
   swal({
     title: "Alto!",
     text: "Ya has jugado una partida, por favor reinicia el juego",
     icon: "error",
     button: "Aceptar",
   });
-
 }
 
 function show__vMessage() {
   swal({
     title: "¡Victoria!",
     text: "¡Has ganado!, pulsa el botón para cerrar",
-    icon: "success",
+    // icon: "success",
+    icon_custom: "<span>&#128577;</span>",
     button: "Aceptar",
   });
 }
@@ -207,20 +207,16 @@ function show__dftMessage() {
 // 6ª Función - Mostrar las figuras según las reglas - HAY QUE REVISAR!!!
 
 function showFigures() {
-  for(let i = 0 ; i < icons.length ; i++ ) {
-
-    if(computer[0]) {
+  for (let i = 0; i < icons.length; i++) {
+    if (computer[0]) {
       icons[0].classList.toggle("dispNone");
       break;
-    }
-    else if (computer[1]) {
-        icons[1].classList.toggle("dispNone");
-         break;
-    }
-    else {
+    } else if (computer[1]) {
+      icons[1].classList.toggle("dispNone");
+      break;
+    } else {
       icons[2].classList.toggle("dispNone");
-       break;
+      break;
     }
-    
-  } 
+  }
 }

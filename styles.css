@@ -343,15 +343,7 @@ span {
 .icon-spinner11:before {
   content: "\e984";
 }
-.icon-happy:before {
-  content: "\e9df";
-}
-.icon-neutral:before {
-  content: "\e9f7";
-}
-.icon-crying:before {
-  content: "\ea01";
-}
+
 .icon-play3:before {
   content: "\ea1c";
 }
