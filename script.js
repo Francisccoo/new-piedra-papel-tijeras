@@ -98,32 +98,32 @@ function play__game() {
 
     if (user === computer[random__number]) { 
       draws++;
-      show__drwMessage();
      setTimeout(() => {
         text__draws.innerHTML = draws,
-        text__drawsMP.innerHTML = draws;
+        text__drawsMP.innerHTML = String.fromCodePoint(0x1F611) + draws;
        }, 1000);
+       show__drwMessage();
       played = true;
       return; //No continua comprovando
     }
 
     if (winner(user, computer[random__number])) {
       victories++;
-      show__vMessage();
       setTimeout(() => {
         text__victories.innerHTML = victories,
-        text__victoriesMP.innerHTML = victories;
+        text__victoriesMP.innerHTML = String.fromCodePoint(0x1F604) + victories;
        }, 1000);
+       show__vMessage();
       played = true;
       return; //No continua comprovando
     }
 
     defeats++;
-    show__dftMessage();
     setTimeout(() => {
         text__defeats.innerHTML = defeats,
-        text__defeatsMP.innerHTML = defeats;
+        text__defeatsMP.innerHTML = String.fromCodePoint(0x1F641) + defeats;
        }, 1000);
+       show__dftMessage();
     played = true;
   } else { // Si ya hemos jugado
     show__message();
