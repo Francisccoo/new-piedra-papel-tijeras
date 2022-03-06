@@ -176,12 +176,14 @@ function show__message() {
   });
 }
 
+let emojis = [0x1f600];
+
 function show__vMessage() {
   swal({
     title: "¡Victoria!",
     text: "¡Has ganado!, pulsa el botón para cerrar",
-    // icon: "success",
-    icon_custom: "<span>&#128577;</span>",
+    icon: "success",
+    // icon_custom: 0x1f600,
     button: "Aceptar",
   });
 }
