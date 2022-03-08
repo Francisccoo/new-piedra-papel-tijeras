@@ -75,6 +75,7 @@ function play__game() {
       case 0:
         computer[0];
         com.classList.toggle("flip-horizontal-bottom");
+        // icons[0].classList.toggle("dispNone");
         setTimeout(() => {
           showFigures();
         }, 1000);
@@ -82,6 +83,7 @@ function play__game() {
       case 1:
         computer[1];
         com.classList.toggle("flip-horizontal-bottom");
+        icons[1].classList.toggle("dispNone");
         setTimeout(() => {
           showFigures();
         }, 1000);
@@ -89,6 +91,7 @@ function play__game() {
       case 2:
         computer[2];
         com.classList.toggle("flip-horizontal-bottom");
+        icons[2].classList.toggle("dispNone");
         setTimeout(() => {
           showFigures();
         }, 1000);
@@ -209,16 +212,13 @@ function show__dftMessage() {
 // 6ª Función - Mostrar las figuras según las reglas - HAY QUE REVISAR!!!
 
 function showFigures() {
-  for (let i = 0; i < icons.length; i++) {
-    if (computer[0]) {
-      icons[0].classList.toggle("dispNone");
-      break;
-    } else if (computer[1]) {
-      icons[1].classList.toggle("dispNone");
-      break;
-    } else {
-      icons[2].classList.toggle("dispNone");
-      break;
-    }
+  var i;
+
+  if (computer[i] == computer[0]) {
+    icons[0].classList.toggle("dispNone");
+  } else if (computer[i] == computer[1]) {
+    icons[1].classList.toggle("dispNone");
+  } else {
+    icons[2].classList.toggle("dispNone");
   }
 }
