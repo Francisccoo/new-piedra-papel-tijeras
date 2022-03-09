@@ -285,6 +285,10 @@ span {
   content: "\01F354";
 }
 
+#com {
+  rotate: 180deg;
+}
+
 /* POPUP MESSAGE */
 
 #box__shadow {
