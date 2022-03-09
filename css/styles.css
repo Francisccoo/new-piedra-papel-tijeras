@@ -281,9 +281,9 @@ span {
   background-color: var(--red);
 }
 
-.emojiRock::before {
-  content: "\01F354";
-}
+/* .emojiRock::before {
+  content: "\0270A";
+} */
 
 #com {
   rotate: 180deg;

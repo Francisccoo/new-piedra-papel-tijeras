@@ -74,27 +74,21 @@ function play__game() {
     switch (random__number) {
       case 0:
         computer[0];
-        com.classList.toggle("flip-horizontal-bottom");
-        icons[0].classList.toggle("dispNone");
-        // setTimeout(() => {
-        //   showFigures();
-        // }, 1000);
+        setTimeout(() => {
+          showFigures(random__number);
+        }, 1000);
         break;
       case 1:
         computer[1];
-        com.classList.toggle("flip-horizontal-bottom");
-        icons[1].classList.toggle("dispNone");
-        // setTimeout(() => {
-        //   showFigures();
-        // }, 1000);
+        setTimeout(() => {
+          showFigures(random__number);
+        }, 1000);
         break;
       case 2:
         computer[2];
-        com.classList.toggle("flip-horizontal-bottom");
-        icons[2].classList.toggle("dispNone");
-        // setTimeout(() => {
-        //   showFigures();
-        // }, 1000);
+        setTimeout(() => {
+          showFigures(random__number);
+        }, 1000);
         break;
       default:
         alert("Por favor, reinicia el juego");
@@ -179,14 +173,11 @@ function show__message() {
   });
 }
 
-let emojis = [0x1f600];
-
 function show__vMessage() {
   swal({
     title: "¡Victoria!",
     text: "¡Has ganado!, pulsa el botón para cerrar",
     icon: "success",
-    // icon_custom: 0x1f600,
     button: "Aceptar",
   });
 }
@@ -211,12 +202,14 @@ function show__dftMessage() {
 
 // 6ª Función - Mostrar las figuras según las reglas - HAY QUE REVISAR!!!
 
-function showFigures() {
-  // if (comVarArray == computer[0]) {
-  //   icons[0].classList.toggle("dispNone");
-  // } else if (comVarArray == computer[1]) {
-  //   icons[1].classList.toggle("dispNone");
-  // } else {
-  //   icons[2].classList.toggle("dispNone");
-  // }
+function showFigures(random__number) {
+  com.classList.toggle("flip-horizontal-bottom");
+
+  if (random__number == 0) {
+    icons[0].classList.toggle("dispNone");
+  } else if (random__number == 1) {
+    icons[1].classList.toggle("dispNone");
+  } else if (random__number == 2) {
+    icons[2].classList.toggle("dispNone");
+  }
 }
