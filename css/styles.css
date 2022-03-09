@@ -281,6 +281,10 @@ span {
   background-color: var(--red);
 }
 
+.emojiRock::before {
+  content: "\01F354";
+}
+
 /* POPUP MESSAGE */
 
 #box__shadow {

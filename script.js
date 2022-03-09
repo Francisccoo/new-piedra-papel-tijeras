@@ -75,26 +75,26 @@ function play__game() {
       case 0:
         computer[0];
         com.classList.toggle("flip-horizontal-bottom");
-        // icons[0].classList.toggle("dispNone");
-        setTimeout(() => {
-          showFigures();
-        }, 1000);
+        icons[0].classList.toggle("dispNone");
+        // setTimeout(() => {
+        //   showFigures();
+        // }, 1000);
         break;
       case 1:
         computer[1];
         com.classList.toggle("flip-horizontal-bottom");
         icons[1].classList.toggle("dispNone");
-        setTimeout(() => {
-          showFigures();
-        }, 1000);
+        // setTimeout(() => {
+        //   showFigures();
+        // }, 1000);
         break;
       case 2:
         computer[2];
         com.classList.toggle("flip-horizontal-bottom");
         icons[2].classList.toggle("dispNone");
-        setTimeout(() => {
-          showFigures();
-        }, 1000);
+        // setTimeout(() => {
+        //   showFigures();
+        // }, 1000);
         break;
       default:
         alert("Por favor, reinicia el juego");
@@ -212,13 +212,11 @@ function show__dftMessage() {
 // 6ª Función - Mostrar las figuras según las reglas - HAY QUE REVISAR!!!
 
 function showFigures() {
-  var i;
-
-  if (computer[i] == computer[0]) {
-    icons[0].classList.toggle("dispNone");
-  } else if (computer[i] == computer[1]) {
-    icons[1].classList.toggle("dispNone");
-  } else {
-    icons[2].classList.toggle("dispNone");
-  }
+  // if (comVarArray == computer[0]) {
+  //   icons[0].classList.toggle("dispNone");
+  // } else if (comVarArray == computer[1]) {
+  //   icons[1].classList.toggle("dispNone");
+  // } else {
+  //   icons[2].classList.toggle("dispNone");
+  // }
 }
