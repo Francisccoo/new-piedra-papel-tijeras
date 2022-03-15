@@ -177,7 +177,7 @@ function show__vMessage() {
   swal({
     title: "¡Victoria!",
     text: "¡Has ganado!, pulsa el botón para cerrar",
-    icon: "success",
+    icon: "img/victory.jpg",
     button: "Aceptar",
   });
 }
@@ -186,7 +186,7 @@ function show__drwMessage() {
   swal({
     title: "Empate",
     text: "Habéis empatado, pulsa el botón para cerrar",
-    icon: "warning",
+    icon: "img/draw.jpg",
     button: "Aceptar",
   });
 }
@@ -195,7 +195,7 @@ function show__dftMessage() {
   swal({
     title: "Derrota...",
     text: "Has perdido, pulsa el botón para cerrar",
-    icon: "error",
+    icon: "img/defeat.jpg",
     button: "Aceptar",
   });
 }
